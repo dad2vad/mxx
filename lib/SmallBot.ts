@@ -38,20 +38,20 @@ export class SmallBot {
                 info: (log) => console.info(log),
             };
         }
-        if (!config.store) {
-            config.store = {
-                read: () => {
-                    try {
-                        return Deno.readTextFileSync("small.store");
-                    } catch (err) {
-                        return undefined;
-                    }
-                },
-                write: (since) => {
-                    Deno.writeTextFileSync("small.store", since);
-                },
-            };
-        }
+//         if (!config.store) {
+//             config.store = {
+//                 read: () => {
+//                     try {
+//                         return Deno.readTextFileSync("small.store");
+//                     } catch (err) {
+//                         return undefined;
+//                     }
+//                 },
+//                 write: (since) => {
+//                     Deno.writeTextFileSync("small.store", since);
+//                 },
+//             };
+//         }
         if (!config.formatHTMLtoPlain) {
             config.formatHTMLtoPlain = (html) => html.replace(/<[^>]+>/g, "");
         }
